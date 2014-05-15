@@ -19,7 +19,7 @@ class Customer {
 
 	public String statement() {
 		Enumeration enum_rentals = rentals.elements();
-		String result = "Rental Record for " + this.getName() + "\n";
+		String result = "<H1>Rental Record for<EM> " + this.getName() + "</EM></H1><P>\n";
 		result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount"
 				+ "\n";
 
@@ -31,12 +31,12 @@ class Customer {
 			// show figures for this rental
 			result += "\t" + each.getMovie().getTitle() + "\t" + "\t"
 					+ each.getDaysRented() + "\t" + String.valueOf(each.getCharge())
-					+ "\n";
+					+ "<BR>\n";
 		}
 		// add footer lines
-		result += "Amount owed is " + String.valueOf(getTotalCharge()) + "\n";
-		result += "You earned " + String.valueOf(getTotalFrequentRenterPoints())
-				+ " frequent renter points";
+		result += "<P>Amount owed is<EM> " + String.valueOf(getTotalCharge()) + "</EM><P>\n";
+		result += "You earned <EM>" + String.valueOf(getTotalFrequentRenterPoints())
+				+ "</EM> frequent renter points<P>";
 		return result;
 	}
 
